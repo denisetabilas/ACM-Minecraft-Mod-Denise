@@ -1,10 +1,9 @@
-package com.denise.tutorialmod.block;
+package com.denise.tutorialmod.item;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import com.denise.tutorialmod.item.ModItems;
 
-public class ModCreativeModeTab {
+public class ModCreativeModTab {
     public static final CreativeModeTab TUTORIAL_TAB = new CreativeModeTab("tutorialtab"){
         @Override
         public ItemStack makeIcon() {

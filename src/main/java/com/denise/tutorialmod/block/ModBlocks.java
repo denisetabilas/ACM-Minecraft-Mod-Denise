@@ -3,14 +3,13 @@ package com.denise.tutorialmod.block;
 //import net.kaupenjoe.tutorialmod.TutorialMod;
 //import net.kaupenjoe.tutorialmod.item.ModCreativeModeTab;
 //import net.kaupenjoe.tutorialmod.item.ModItems;
+import com.denise.tutorialmod.item.ModCreativeModTab;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,25 +26,25 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ACM_BLOCK = registerBlock("acm_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(0f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(0f).requiresCorrectToolForDrops()), ModCreativeModTab.TUTORIAL_TAB);
 
 
     public static final RegistryObject<Block> ACM_ORE = registerBlock("acm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(0f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> DEEPSLATE_ACM_ORE = registerBlock("deepslate_acm_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(0f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> ENDSTONE_ZIRCON_ORE = registerBlock("endstone_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
     public static final RegistryObject<Block> NETHERRACK_ZIRCON_ORE = registerBlock("netherrack_zircon_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+                    UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
