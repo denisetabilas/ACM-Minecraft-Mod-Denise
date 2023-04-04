@@ -4,8 +4,8 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '0.0.1-1.19'
-group = 'com.denise.tutorialmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = '1.0'
+group = 'net.examplename.tutorialmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'tutorialmod'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -52,7 +52,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-                tutorialmod {
+                examplemod {
                     source sourceSets.main
                 }
             }
