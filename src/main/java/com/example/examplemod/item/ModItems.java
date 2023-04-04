@@ -2,6 +2,7 @@ package com.example.examplemod.item;
 import com.example.examplemod.block.ModBlocks;
 
 import com.example.examplemod.ExampleMod;
+import com.example.examplemod.entity.ModEntityTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -44,9 +45,15 @@ public class ModItems {
     public static final RegistryObject<Item> EXAMPLE_BOOTS = ITEMS.register("example_boots",
             () -> new ArmorItem(ArmorMaterials.DIAMOND,EquipmentSlot.FEET,new Item.Properties().tab(ModCreativeModTab.TUTORIAL_TAB)));
 
+    public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341,0x19732e,
+                    new Item.Properties().tab(ModCreativeModTab.TUTORIAL_TAB)));
 
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
+
+
+
 }

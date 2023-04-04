@@ -1,11 +1,14 @@
 package com.example.examplemod;
 
+import com.example.examplemod.entity.clients.ChomperRenderer;
+import com.example.examplemod.entity.ModEntityTypes;
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;
 import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -28,6 +31,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExampleMod.MOD_ID)
@@ -51,9 +55,8 @@ public class ExampleMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
-
-
+        ModEntityTypes.register(modEventBus);
+        GeckoLib.initialize();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -84,6 +87,12 @@ public class ExampleMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);
         }
     }
+//    @SubscribeEvent
+//    public static void onClientSetup(FMLClientSetupEvent event)
+//    {
+//        EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);
+//    }
 }
