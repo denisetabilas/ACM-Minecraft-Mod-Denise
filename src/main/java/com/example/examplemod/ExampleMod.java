@@ -55,8 +55,8 @@ public class ExampleMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-        ModEntityTypes.register(modEventBus);
         GeckoLib.initialize();
+        ModEntityTypes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
