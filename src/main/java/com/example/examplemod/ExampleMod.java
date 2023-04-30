@@ -90,9 +90,4 @@ public class ExampleMod
             EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);
         }
     }
-//    @SubscribeEvent
-//    public static void onClientSetup(FMLClientSetupEvent event)
-//    {
-//        EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);
-//    }
 }

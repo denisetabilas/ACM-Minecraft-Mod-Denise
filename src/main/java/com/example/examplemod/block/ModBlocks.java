@@ -36,6 +36,10 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(0f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> KOKESHI_DOLL = registerBlock("kokeshi_doll",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(0f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModTab.TUTORIAL_TAB);
 
 
 
